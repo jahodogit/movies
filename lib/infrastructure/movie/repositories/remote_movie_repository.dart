@@ -2,8 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:movies/domain/movie/exceptions/movie_fetch_exception.dart';
 import 'package:movies/domain/movie/exceptions/movie_not_found_exception.dart';
 import 'package:movies/domain/movie/models/movie.dart';
+import 'package:movies/domain/movie/models/movie_detail.dart';
 import 'package:movies/domain/movie/repositories/movie_repository.dart';
 import 'package:movies/infrastructure/movie/dao/movie_dao.dart';
+import 'package:movies/infrastructure/movie/mappers/movie_detail_mapper.dart';
 import 'package:movies/infrastructure/movie/mappers/movie_mapper.dart';
 
 class RemoteMovieRepository implements MovieRepository {
@@ -42,10 +44,10 @@ class RemoteMovieRepository implements MovieRepository {
   }
 
   @override
-  Future<Movie> getMovieById(int id) async {
+  Future<MovieDetail> getMovieById(int id) async {
     try {
       final dto = await _dao.getMovieById(id);
-      return MovieMapper.toDomain(dto);
+      return MovieDetailMapper.toDomain(dto);
     } on DioException catch (error) {
       if (error.response?.statusCode == 404) {
         throw MovieNotFoundException(id);

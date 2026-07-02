@@ -1,5 +1,6 @@
 import 'package:movies/domain/movie/exceptions/non_english_movie_exception.dart';
 import 'package:movies/domain/movie/models/movie.dart';
+import 'package:movies/domain/movie/models/movie_detail.dart';
 import 'package:movies/domain/movie/repositories/movie_repository.dart';
 
 class MovieService {
@@ -16,7 +17,7 @@ class MovieService {
   Future<List<Movie>> searchMovies(String query, {int page = 1}) async =>
       _onlyEnglish(await _repository.searchMovies(query, page: page));
 
-  Future<Movie> getMovieById(int id) async {
+  Future<MovieDetail> getMovieById(int id) async {
     final movie = await _repository.getMovieById(id);
     if (!movie.isEnglish) {
       throw NonEnglishMovieException(movie.id);

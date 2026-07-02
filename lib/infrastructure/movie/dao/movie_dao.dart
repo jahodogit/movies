@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:movies/infrastructure/movie/models/movie_dto.dart';
+import 'package:movies/infrastructure/movie/models/movie_detail_dto.dart';
 import 'package:movies/infrastructure/movie/models/movie_page_dto.dart';
 
 class MovieDao {
@@ -31,8 +31,8 @@ class MovieDao {
     return MoviePageDto.fromJson(response.data!);
   }
 
-  Future<MovieDto> getMovieById(int id) async {
+  Future<MovieDetailDto> getMovieById(int id) async {
     final response = await _dio.get<Map<String, dynamic>>('/movie/$id');
-    return MovieDto.fromJson(response.data!);
+    return MovieDetailDto.fromJson(response.data!);
   }
 }

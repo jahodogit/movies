@@ -1,4 +1,5 @@
 import 'package:movies/domain/movie/models/movie.dart';
+import 'package:movies/domain/movie/models/movie_detail.dart';
 
 abstract interface class MovieRepository {
   Future<List<Movie>> getPopularMovies({int page = 1});
@@ -7,5 +8,5 @@ abstract interface class MovieRepository {
 
   Future<List<Movie>> searchMovies(String query, {int page = 1});
 
-  Future<Movie> getMovieById(int id);
+  Future<MovieDetail> getMovieById(int id);
 }

@@ -1,45 +1,27 @@
 import 'package:flutter/foundation.dart';
 
+import 'movie_base.dart';
+
 @immutable
-class Movie {
+class Movie extends MovieBase {
   const Movie({
-    required this.id,
-    required this.title,
-    required this.originalTitle,
-    required this.originalLanguage,
-    required this.overview,
+    required super.id,
+    required super.title,
+    required super.originalTitle,
+    required super.originalLanguage,
+    required super.overview,
+    required super.popularity,
+    required super.voteAverage,
+    required super.voteCount,
+    required super.adult,
+    required super.video,
     required this.genreIds,
-    required this.popularity,
-    required this.voteAverage,
-    required this.voteCount,
-    required this.adult,
-    required this.video,
-    this.posterPath,
-    this.backdropPath,
-    this.releaseDate,
+    super.posterPath,
+    super.backdropPath,
+    super.releaseDate,
   });
 
-  final int id;
-  final String title;
-  final String originalTitle;
-  final String originalLanguage;
-  final String overview;
   final List<int> genreIds;
-  final double popularity;
-  final double voteAverage;
-  final int voteCount;
-  final bool adult;
-  final bool video;
-  final String? posterPath;
-  final String? backdropPath;
-  final DateTime? releaseDate;
-
-  bool get isHighlyRated => voteAverage >= 8.0 && voteCount >= 800;
-
-  bool get isReleased =>
-      releaseDate != null && releaseDate!.isBefore(DateTime.now());
-
-  bool get isEnglish => originalLanguage == 'en';
 
   Movie copyWith({
     int? id,
@@ -74,13 +56,6 @@ class Movie {
       releaseDate: releaseDate ?? this.releaseDate,
     );
   }
-
-  @override
-  bool operator ==(Object other) =>
-      identical(this, other) || (other is Movie && other.id == id);
-
-  @override
-  int get hashCode => id.hashCode;
 
   @override
   String toString() => 'Movie(id: $id, title: $title)';
