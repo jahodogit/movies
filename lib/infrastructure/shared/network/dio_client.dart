@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:movies/core/constants/env.dart';
+import 'package:movies/infrastructure/shared/config/env.dart';
 
 Dio createDio() {
   final dio = Dio(
@@ -14,10 +14,7 @@ Dio createDio() {
   dio.interceptors.add(
     InterceptorsWrapper(
       onRequest: (options, handler) {
-        options.queryParameters = {
-          ...options.queryParameters,
-          'api_key': Env.tmdbApiKey,
-        };
+        options.headers['Authorization'] = 'Bearer ${Env.tmdbApiKey}';
         handler.next(options);
       },
     ),

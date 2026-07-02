@@ -5,7 +5,7 @@ part 'movie_page_dto.freezed.dart';
 part 'movie_page_dto.g.dart';
 
 @freezed
-abstract class MoviePageDto with _$MoviePageDto {
+class MoviePageDto with _$MoviePageDto {
   const factory MoviePageDto({
     @Default(1) int page,
     @Default(<MovieDto>[]) List<MovieDto> results,

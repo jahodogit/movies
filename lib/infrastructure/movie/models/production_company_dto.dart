@@ -4,7 +4,7 @@ part 'production_company_dto.freezed.dart';
 part 'production_company_dto.g.dart';
 
 @freezed
-abstract class ProductionCompanyDto with _$ProductionCompanyDto {
+class ProductionCompanyDto with _$ProductionCompanyDto {
   const factory ProductionCompanyDto({
     required int id,
     @Default('') String name,

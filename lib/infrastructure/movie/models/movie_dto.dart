@@ -5,7 +5,7 @@ part 'movie_dto.freezed.dart';
 part 'movie_dto.g.dart';
 
 @freezed
-abstract class MovieDto with _$MovieDto {
+class MovieDto with _$MovieDto {
   const factory MovieDto({
     required int id,
     @Default('') String title,

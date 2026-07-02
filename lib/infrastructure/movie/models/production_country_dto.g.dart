@@ -6,13 +6,13 @@ part of 'production_country_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_ProductionCountryDto _$ProductionCountryDtoFromJson(
+_$ProductionCountryDtoImpl _$$ProductionCountryDtoImplFromJson(
   Map<String, dynamic> json,
-) => _ProductionCountryDto(
+) => _$ProductionCountryDtoImpl(
   iso3166_1: json['iso_3166_1'] as String? ?? '',
   name: json['name'] as String? ?? '',
 );
 
-Map<String, dynamic> _$ProductionCountryDtoToJson(
-  _ProductionCountryDto instance,
+Map<String, dynamic> _$$ProductionCountryDtoImplToJson(
+  _$ProductionCountryDtoImpl instance,
 ) => <String, dynamic>{'iso_3166_1': instance.iso3166_1, 'name': instance.name};

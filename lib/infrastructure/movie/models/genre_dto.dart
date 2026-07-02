@@ -4,7 +4,7 @@ part 'genre_dto.freezed.dart';
 part 'genre_dto.g.dart';
 
 @freezed
-abstract class GenreDto with _$GenreDto {
+class GenreDto with _$GenreDto {
   const factory GenreDto({
     required int id,
     @Default('') String name,

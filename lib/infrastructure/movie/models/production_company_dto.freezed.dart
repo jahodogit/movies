@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,278 +9,248 @@ part of 'production_company_dto.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
+ProductionCompanyDto _$ProductionCompanyDtoFromJson(Map<String, dynamic> json) {
+  return _ProductionCompanyDto.fromJson(json);
+}
 
 /// @nodoc
 mixin _$ProductionCompanyDto {
-
- int get id; String get name;@JsonKey(name: 'logo_path') String? get logoPath;@JsonKey(name: 'origin_country') String? get originCountry;
-/// Create a copy of ProductionCompanyDto
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$ProductionCompanyDtoCopyWith<ProductionCompanyDto> get copyWith => _$ProductionCompanyDtoCopyWithImpl<ProductionCompanyDto>(this as ProductionCompanyDto, _$identity);
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'logo_path')
+  String? get logoPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'origin_country')
+  String? get originCountry => throw _privateConstructorUsedError;
 
   /// Serializes this ProductionCompanyDto to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductionCompanyDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.logoPath, logoPath) || other.logoPath == logoPath)&&(identical(other.originCountry, originCountry) || other.originCountry == originCountry));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,logoPath,originCountry);
-
-@override
-String toString() {
-  return 'ProductionCompanyDto(id: $id, name: $name, logoPath: $logoPath, originCountry: $originCountry)';
-}
-
-
+  /// Create a copy of ProductionCompanyDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $ProductionCompanyDtoCopyWith<ProductionCompanyDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $ProductionCompanyDtoCopyWith<$Res>  {
-  factory $ProductionCompanyDtoCopyWith(ProductionCompanyDto value, $Res Function(ProductionCompanyDto) _then) = _$ProductionCompanyDtoCopyWithImpl;
-@useResult
-$Res call({
- int id, String name,@JsonKey(name: 'logo_path') String? logoPath,@JsonKey(name: 'origin_country') String? originCountry
-});
-
-
-
-
+abstract class $ProductionCompanyDtoCopyWith<$Res> {
+  factory $ProductionCompanyDtoCopyWith(
+    ProductionCompanyDto value,
+    $Res Function(ProductionCompanyDto) then,
+  ) = _$ProductionCompanyDtoCopyWithImpl<$Res, ProductionCompanyDto>;
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'logo_path') String? logoPath,
+    @JsonKey(name: 'origin_country') String? originCountry,
+  });
 }
+
 /// @nodoc
-class _$ProductionCompanyDtoCopyWithImpl<$Res>
+class _$ProductionCompanyDtoCopyWithImpl<
+  $Res,
+  $Val extends ProductionCompanyDto
+>
     implements $ProductionCompanyDtoCopyWith<$Res> {
-  _$ProductionCompanyDtoCopyWithImpl(this._self, this._then);
+  _$ProductionCompanyDtoCopyWithImpl(this._value, this._then);
 
-  final ProductionCompanyDto _self;
-  final $Res Function(ProductionCompanyDto) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of ProductionCompanyDto
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? logoPath = freezed,Object? originCountry = freezed,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,logoPath: freezed == logoPath ? _self.logoPath : logoPath // ignore: cast_nullable_to_non_nullable
-as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
+  /// Create a copy of ProductionCompanyDto
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? logoPath = freezed,
+    Object? originCountry = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            logoPath: freezed == logoPath
+                ? _value.logoPath
+                : logoPath // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            originCountry: freezed == originCountry
+                ? _value.originCountry
+                : originCountry // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
+  }
 }
 
+/// @nodoc
+abstract class _$$ProductionCompanyDtoImplCopyWith<$Res>
+    implements $ProductionCompanyDtoCopyWith<$Res> {
+  factory _$$ProductionCompanyDtoImplCopyWith(
+    _$ProductionCompanyDtoImpl value,
+    $Res Function(_$ProductionCompanyDtoImpl) then,
+  ) = __$$ProductionCompanyDtoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'logo_path') String? logoPath,
+    @JsonKey(name: 'origin_country') String? originCountry,
+  });
 }
 
+/// @nodoc
+class __$$ProductionCompanyDtoImplCopyWithImpl<$Res>
+    extends _$ProductionCompanyDtoCopyWithImpl<$Res, _$ProductionCompanyDtoImpl>
+    implements _$$ProductionCompanyDtoImplCopyWith<$Res> {
+  __$$ProductionCompanyDtoImplCopyWithImpl(
+    _$ProductionCompanyDtoImpl _value,
+    $Res Function(_$ProductionCompanyDtoImpl) _then,
+  ) : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [ProductionCompanyDto].
-extension ProductionCompanyDtoPatterns on ProductionCompanyDto {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _ProductionCompanyDto value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _ProductionCompanyDto() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _ProductionCompanyDto value)  $default,){
-final _that = this;
-switch (_that) {
-case _ProductionCompanyDto():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _ProductionCompanyDto value)?  $default,){
-final _that = this;
-switch (_that) {
-case _ProductionCompanyDto() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name, @JsonKey(name: 'logo_path')  String? logoPath, @JsonKey(name: 'origin_country')  String? originCountry)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _ProductionCompanyDto() when $default != null:
-return $default(_that.id,_that.name,_that.logoPath,_that.originCountry);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name, @JsonKey(name: 'logo_path')  String? logoPath, @JsonKey(name: 'origin_country')  String? originCountry)  $default,) {final _that = this;
-switch (_that) {
-case _ProductionCompanyDto():
-return $default(_that.id,_that.name,_that.logoPath,_that.originCountry);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name, @JsonKey(name: 'logo_path')  String? logoPath, @JsonKey(name: 'origin_country')  String? originCountry)?  $default,) {final _that = this;
-switch (_that) {
-case _ProductionCompanyDto() when $default != null:
-return $default(_that.id,_that.name,_that.logoPath,_that.originCountry);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of ProductionCompanyDto
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? logoPath = freezed,
+    Object? originCountry = freezed,
+  }) {
+    return _then(
+      _$ProductionCompanyDtoImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        logoPath: freezed == logoPath
+            ? _value.logoPath
+            : logoPath // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        originCountry: freezed == originCountry
+            ? _value.originCountry
+            : originCountry // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$ProductionCompanyDtoImpl implements _ProductionCompanyDto {
+  const _$ProductionCompanyDtoImpl({
+    required this.id,
+    this.name = '',
+    @JsonKey(name: 'logo_path') this.logoPath,
+    @JsonKey(name: 'origin_country') this.originCountry,
+  });
 
-class _ProductionCompanyDto implements ProductionCompanyDto {
-  const _ProductionCompanyDto({required this.id, this.name = '', @JsonKey(name: 'logo_path') this.logoPath, @JsonKey(name: 'origin_country') this.originCountry});
-  factory _ProductionCompanyDto.fromJson(Map<String, dynamic> json) => _$ProductionCompanyDtoFromJson(json);
+  factory _$ProductionCompanyDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$ProductionCompanyDtoImplFromJson(json);
 
-@override final  int id;
-@override@JsonKey() final  String name;
-@override@JsonKey(name: 'logo_path') final  String? logoPath;
-@override@JsonKey(name: 'origin_country') final  String? originCountry;
+  @override
+  final int id;
+  @override
+  @JsonKey()
+  final String name;
+  @override
+  @JsonKey(name: 'logo_path')
+  final String? logoPath;
+  @override
+  @JsonKey(name: 'origin_country')
+  final String? originCountry;
 
-/// Create a copy of ProductionCompanyDto
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$ProductionCompanyDtoCopyWith<_ProductionCompanyDto> get copyWith => __$ProductionCompanyDtoCopyWithImpl<_ProductionCompanyDto>(this, _$identity);
+  @override
+  String toString() {
+    return 'ProductionCompanyDto(id: $id, name: $name, logoPath: $logoPath, originCountry: $originCountry)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$ProductionCompanyDtoToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProductionCompanyDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.logoPath, logoPath) ||
+                other.logoPath == logoPath) &&
+            (identical(other.originCountry, originCountry) ||
+                other.originCountry == originCountry));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, logoPath, originCountry);
+
+  /// Create a copy of ProductionCompanyDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ProductionCompanyDtoImplCopyWith<_$ProductionCompanyDtoImpl>
+  get copyWith =>
+      __$$ProductionCompanyDtoImplCopyWithImpl<_$ProductionCompanyDtoImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$ProductionCompanyDtoImplToJson(this);
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductionCompanyDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.logoPath, logoPath) || other.logoPath == logoPath)&&(identical(other.originCountry, originCountry) || other.originCountry == originCountry));
+abstract class _ProductionCompanyDto implements ProductionCompanyDto {
+  const factory _ProductionCompanyDto({
+    required final int id,
+    final String name,
+    @JsonKey(name: 'logo_path') final String? logoPath,
+    @JsonKey(name: 'origin_country') final String? originCountry,
+  }) = _$ProductionCompanyDtoImpl;
+
+  factory _ProductionCompanyDto.fromJson(Map<String, dynamic> json) =
+      _$ProductionCompanyDtoImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  @JsonKey(name: 'logo_path')
+  String? get logoPath;
+  @override
+  @JsonKey(name: 'origin_country')
+  String? get originCountry;
+
+  /// Create a copy of ProductionCompanyDto
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ProductionCompanyDtoImplCopyWith<_$ProductionCompanyDtoImpl>
+  get copyWith => throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,logoPath,originCountry);
-
-@override
-String toString() {
-  return 'ProductionCompanyDto(id: $id, name: $name, logoPath: $logoPath, originCountry: $originCountry)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$ProductionCompanyDtoCopyWith<$Res> implements $ProductionCompanyDtoCopyWith<$Res> {
-  factory _$ProductionCompanyDtoCopyWith(_ProductionCompanyDto value, $Res Function(_ProductionCompanyDto) _then) = __$ProductionCompanyDtoCopyWithImpl;
-@override @useResult
-$Res call({
- int id, String name,@JsonKey(name: 'logo_path') String? logoPath,@JsonKey(name: 'origin_country') String? originCountry
-});
-
-
-
-
-}
-/// @nodoc
-class __$ProductionCompanyDtoCopyWithImpl<$Res>
-    implements _$ProductionCompanyDtoCopyWith<$Res> {
-  __$ProductionCompanyDtoCopyWithImpl(this._self, this._then);
-
-  final _ProductionCompanyDto _self;
-  final $Res Function(_ProductionCompanyDto) _then;
-
-/// Create a copy of ProductionCompanyDto
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? logoPath = freezed,Object? originCountry = freezed,}) {
-  return _then(_ProductionCompanyDto(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,logoPath: freezed == logoPath ? _self.logoPath : logoPath // ignore: cast_nullable_to_non_nullable
-as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-
-}
-
-// dart format on

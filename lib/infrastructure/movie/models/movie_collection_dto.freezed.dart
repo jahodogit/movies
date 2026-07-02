@@ -1,5 +1,5 @@
-// GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,278 +9,244 @@ part of 'movie_collection_dto.dart';
 // FreezedGenerator
 // **************************************************************************
 
-// dart format off
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
+
+MovieCollectionDto _$MovieCollectionDtoFromJson(Map<String, dynamic> json) {
+  return _MovieCollectionDto.fromJson(json);
+}
 
 /// @nodoc
 mixin _$MovieCollectionDto {
-
- int get id; String get name;@JsonKey(name: 'poster_path') String? get posterPath;@JsonKey(name: 'backdrop_path') String? get backdropPath;
-/// Create a copy of MovieCollectionDto
-/// with the given fields replaced by the non-null parameter values.
-@JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-$MovieCollectionDtoCopyWith<MovieCollectionDto> get copyWith => _$MovieCollectionDtoCopyWithImpl<MovieCollectionDto>(this as MovieCollectionDto, _$identity);
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  @JsonKey(name: 'poster_path')
+  String? get posterPath => throw _privateConstructorUsedError;
+  @JsonKey(name: 'backdrop_path')
+  String? get backdropPath => throw _privateConstructorUsedError;
 
   /// Serializes this MovieCollectionDto to a JSON map.
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
 
-
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is MovieCollectionDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.posterPath, posterPath) || other.posterPath == posterPath)&&(identical(other.backdropPath, backdropPath) || other.backdropPath == backdropPath));
-}
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,posterPath,backdropPath);
-
-@override
-String toString() {
-  return 'MovieCollectionDto(id: $id, name: $name, posterPath: $posterPath, backdropPath: $backdropPath)';
-}
-
-
+  /// Create a copy of MovieCollectionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MovieCollectionDtoCopyWith<MovieCollectionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract mixin class $MovieCollectionDtoCopyWith<$Res>  {
-  factory $MovieCollectionDtoCopyWith(MovieCollectionDto value, $Res Function(MovieCollectionDto) _then) = _$MovieCollectionDtoCopyWithImpl;
-@useResult
-$Res call({
- int id, String name,@JsonKey(name: 'poster_path') String? posterPath,@JsonKey(name: 'backdrop_path') String? backdropPath
-});
-
-
-
-
+abstract class $MovieCollectionDtoCopyWith<$Res> {
+  factory $MovieCollectionDtoCopyWith(
+    MovieCollectionDto value,
+    $Res Function(MovieCollectionDto) then,
+  ) = _$MovieCollectionDtoCopyWithImpl<$Res, MovieCollectionDto>;
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'poster_path') String? posterPath,
+    @JsonKey(name: 'backdrop_path') String? backdropPath,
+  });
 }
+
 /// @nodoc
-class _$MovieCollectionDtoCopyWithImpl<$Res>
+class _$MovieCollectionDtoCopyWithImpl<$Res, $Val extends MovieCollectionDto>
     implements $MovieCollectionDtoCopyWith<$Res> {
-  _$MovieCollectionDtoCopyWithImpl(this._self, this._then);
+  _$MovieCollectionDtoCopyWithImpl(this._value, this._then);
 
-  final MovieCollectionDto _self;
-  final $Res Function(MovieCollectionDto) _then;
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
-/// Create a copy of MovieCollectionDto
-/// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? posterPath = freezed,Object? backdropPath = freezed,}) {
-  return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,posterPath: freezed == posterPath ? _self.posterPath : posterPath // ignore: cast_nullable_to_non_nullable
-as String?,backdropPath: freezed == backdropPath ? _self.backdropPath : backdropPath // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
+  /// Create a copy of MovieCollectionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
+  }) {
+    return _then(
+      _value.copyWith(
+            id: null == id
+                ? _value.id
+                : id // ignore: cast_nullable_to_non_nullable
+                      as int,
+            name: null == name
+                ? _value.name
+                : name // ignore: cast_nullable_to_non_nullable
+                      as String,
+            posterPath: freezed == posterPath
+                ? _value.posterPath
+                : posterPath // ignore: cast_nullable_to_non_nullable
+                      as String?,
+            backdropPath: freezed == backdropPath
+                ? _value.backdropPath
+                : backdropPath // ignore: cast_nullable_to_non_nullable
+                      as String?,
+          )
+          as $Val,
+    );
+  }
 }
 
+/// @nodoc
+abstract class _$$MovieCollectionDtoImplCopyWith<$Res>
+    implements $MovieCollectionDtoCopyWith<$Res> {
+  factory _$$MovieCollectionDtoImplCopyWith(
+    _$MovieCollectionDtoImpl value,
+    $Res Function(_$MovieCollectionDtoImpl) then,
+  ) = __$$MovieCollectionDtoImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({
+    int id,
+    String name,
+    @JsonKey(name: 'poster_path') String? posterPath,
+    @JsonKey(name: 'backdrop_path') String? backdropPath,
+  });
 }
 
+/// @nodoc
+class __$$MovieCollectionDtoImplCopyWithImpl<$Res>
+    extends _$MovieCollectionDtoCopyWithImpl<$Res, _$MovieCollectionDtoImpl>
+    implements _$$MovieCollectionDtoImplCopyWith<$Res> {
+  __$$MovieCollectionDtoImplCopyWithImpl(
+    _$MovieCollectionDtoImpl _value,
+    $Res Function(_$MovieCollectionDtoImpl) _then,
+  ) : super(_value, _then);
 
-/// Adds pattern-matching-related methods to [MovieCollectionDto].
-extension MovieCollectionDtoPatterns on MovieCollectionDto {
-/// A variant of `map` that fallback to returning `orElse`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _MovieCollectionDto value)?  $default,{required TResult orElse(),}){
-final _that = this;
-switch (_that) {
-case _MovieCollectionDto() when $default != null:
-return $default(_that);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// Callbacks receives the raw object, upcasted.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case final Subclass2 value:
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _MovieCollectionDto value)  $default,){
-final _that = this;
-switch (_that) {
-case _MovieCollectionDto():
-return $default(_that);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `map` that fallback to returning `null`.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case final Subclass value:
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _MovieCollectionDto value)?  $default,){
-final _that = this;
-switch (_that) {
-case _MovieCollectionDto() when $default != null:
-return $default(_that);case _:
-  return null;
-
-}
-}
-/// A variant of `when` that fallback to an `orElse` callback.
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return orElse();
-/// }
-/// ```
-
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String name, @JsonKey(name: 'poster_path')  String? posterPath, @JsonKey(name: 'backdrop_path')  String? backdropPath)?  $default,{required TResult orElse(),}) {final _that = this;
-switch (_that) {
-case _MovieCollectionDto() when $default != null:
-return $default(_that.id,_that.name,_that.posterPath,_that.backdropPath);case _:
-  return orElse();
-
-}
-}
-/// A `switch`-like method, using callbacks.
-///
-/// As opposed to `map`, this offers destructuring.
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case Subclass2(:final field2):
-///     return ...;
-/// }
-/// ```
-
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String name, @JsonKey(name: 'poster_path')  String? posterPath, @JsonKey(name: 'backdrop_path')  String? backdropPath)  $default,) {final _that = this;
-switch (_that) {
-case _MovieCollectionDto():
-return $default(_that.id,_that.name,_that.posterPath,_that.backdropPath);case _:
-  throw StateError('Unexpected subclass');
-
-}
-}
-/// A variant of `when` that fallback to returning `null`
-///
-/// It is equivalent to doing:
-/// ```dart
-/// switch (sealedClass) {
-///   case Subclass(:final field):
-///     return ...;
-///   case _:
-///     return null;
-/// }
-/// ```
-
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String name, @JsonKey(name: 'poster_path')  String? posterPath, @JsonKey(name: 'backdrop_path')  String? backdropPath)?  $default,) {final _that = this;
-switch (_that) {
-case _MovieCollectionDto() when $default != null:
-return $default(_that.id,_that.name,_that.posterPath,_that.backdropPath);case _:
-  return null;
-
-}
-}
-
+  /// Create a copy of MovieCollectionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? posterPath = freezed,
+    Object? backdropPath = freezed,
+  }) {
+    return _then(
+      _$MovieCollectionDtoImpl(
+        id: null == id
+            ? _value.id
+            : id // ignore: cast_nullable_to_non_nullable
+                  as int,
+        name: null == name
+            ? _value.name
+            : name // ignore: cast_nullable_to_non_nullable
+                  as String,
+        posterPath: freezed == posterPath
+            ? _value.posterPath
+            : posterPath // ignore: cast_nullable_to_non_nullable
+                  as String?,
+        backdropPath: freezed == backdropPath
+            ? _value.backdropPath
+            : backdropPath // ignore: cast_nullable_to_non_nullable
+                  as String?,
+      ),
+    );
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
+class _$MovieCollectionDtoImpl implements _MovieCollectionDto {
+  const _$MovieCollectionDtoImpl({
+    required this.id,
+    this.name = '',
+    @JsonKey(name: 'poster_path') this.posterPath,
+    @JsonKey(name: 'backdrop_path') this.backdropPath,
+  });
 
-class _MovieCollectionDto implements MovieCollectionDto {
-  const _MovieCollectionDto({required this.id, this.name = '', @JsonKey(name: 'poster_path') this.posterPath, @JsonKey(name: 'backdrop_path') this.backdropPath});
-  factory _MovieCollectionDto.fromJson(Map<String, dynamic> json) => _$MovieCollectionDtoFromJson(json);
+  factory _$MovieCollectionDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieCollectionDtoImplFromJson(json);
 
-@override final  int id;
-@override@JsonKey() final  String name;
-@override@JsonKey(name: 'poster_path') final  String? posterPath;
-@override@JsonKey(name: 'backdrop_path') final  String? backdropPath;
+  @override
+  final int id;
+  @override
+  @JsonKey()
+  final String name;
+  @override
+  @JsonKey(name: 'poster_path')
+  final String? posterPath;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  final String? backdropPath;
 
-/// Create a copy of MovieCollectionDto
-/// with the given fields replaced by the non-null parameter values.
-@override @JsonKey(includeFromJson: false, includeToJson: false)
-@pragma('vm:prefer-inline')
-_$MovieCollectionDtoCopyWith<_MovieCollectionDto> get copyWith => __$MovieCollectionDtoCopyWithImpl<_MovieCollectionDto>(this, _$identity);
+  @override
+  String toString() {
+    return 'MovieCollectionDto(id: $id, name: $name, posterPath: $posterPath, backdropPath: $backdropPath)';
+  }
 
-@override
-Map<String, dynamic> toJson() {
-  return _$MovieCollectionDtoToJson(this, );
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MovieCollectionDtoImpl &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.posterPath, posterPath) ||
+                other.posterPath == posterPath) &&
+            (identical(other.backdropPath, backdropPath) ||
+                other.backdropPath == backdropPath));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, posterPath, backdropPath);
+
+  /// Create a copy of MovieCollectionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MovieCollectionDtoImplCopyWith<_$MovieCollectionDtoImpl> get copyWith =>
+      __$$MovieCollectionDtoImplCopyWithImpl<_$MovieCollectionDtoImpl>(
+        this,
+        _$identity,
+      );
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieCollectionDtoImplToJson(this);
+  }
 }
 
-@override
-bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _MovieCollectionDto&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.posterPath, posterPath) || other.posterPath == posterPath)&&(identical(other.backdropPath, backdropPath) || other.backdropPath == backdropPath));
+abstract class _MovieCollectionDto implements MovieCollectionDto {
+  const factory _MovieCollectionDto({
+    required final int id,
+    final String name,
+    @JsonKey(name: 'poster_path') final String? posterPath,
+    @JsonKey(name: 'backdrop_path') final String? backdropPath,
+  }) = _$MovieCollectionDtoImpl;
+
+  factory _MovieCollectionDto.fromJson(Map<String, dynamic> json) =
+      _$MovieCollectionDtoImpl.fromJson;
+
+  @override
+  int get id;
+  @override
+  String get name;
+  @override
+  @JsonKey(name: 'poster_path')
+  String? get posterPath;
+  @override
+  @JsonKey(name: 'backdrop_path')
+  String? get backdropPath;
+
+  /// Create a copy of MovieCollectionDto
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MovieCollectionDtoImplCopyWith<_$MovieCollectionDtoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
-
-@JsonKey(includeFromJson: false, includeToJson: false)
-@override
-int get hashCode => Object.hash(runtimeType,id,name,posterPath,backdropPath);
-
-@override
-String toString() {
-  return 'MovieCollectionDto(id: $id, name: $name, posterPath: $posterPath, backdropPath: $backdropPath)';
-}
-
-
-}
-
-/// @nodoc
-abstract mixin class _$MovieCollectionDtoCopyWith<$Res> implements $MovieCollectionDtoCopyWith<$Res> {
-  factory _$MovieCollectionDtoCopyWith(_MovieCollectionDto value, $Res Function(_MovieCollectionDto) _then) = __$MovieCollectionDtoCopyWithImpl;
-@override @useResult
-$Res call({
- int id, String name,@JsonKey(name: 'poster_path') String? posterPath,@JsonKey(name: 'backdrop_path') String? backdropPath
-});
-
-
-
-
-}
-/// @nodoc
-class __$MovieCollectionDtoCopyWithImpl<$Res>
-    implements _$MovieCollectionDtoCopyWith<$Res> {
-  __$MovieCollectionDtoCopyWithImpl(this._self, this._then);
-
-  final _MovieCollectionDto _self;
-  final $Res Function(_MovieCollectionDto) _then;
-
-/// Create a copy of MovieCollectionDto
-/// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? posterPath = freezed,Object? backdropPath = freezed,}) {
-  return _then(_MovieCollectionDto(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,posterPath: freezed == posterPath ? _self.posterPath : posterPath // ignore: cast_nullable_to_non_nullable
-as String?,backdropPath: freezed == backdropPath ? _self.backdropPath : backdropPath // ignore: cast_nullable_to_non_nullable
-as String?,
-  ));
-}
-
-
-}
-
-// dart format on

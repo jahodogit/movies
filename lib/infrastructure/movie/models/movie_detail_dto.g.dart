@@ -6,9 +6,9 @@ part of 'movie_detail_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_MovieDetailDto _$MovieDetailDtoFromJson(
+_$MovieDetailDtoImpl _$$MovieDetailDtoImplFromJson(
   Map<String, dynamic> json,
-) => _MovieDetailDto(
+) => _$MovieDetailDtoImpl(
   id: (json['id'] as num).toInt(),
   title: json['title'] as String? ?? '',
   originalTitle: json['original_title'] as String? ?? '',
@@ -61,32 +61,33 @@ _MovieDetailDto _$MovieDetailDtoFromJson(
   releaseDate: json['release_date'] as String?,
 );
 
-Map<String, dynamic> _$MovieDetailDtoToJson(_MovieDetailDto instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'title': instance.title,
-      'original_title': instance.originalTitle,
-      'original_language': instance.originalLanguage,
-      'overview': instance.overview,
-      'genres': instance.genres,
-      'popularity': instance.popularity,
-      'vote_average': instance.voteAverage,
-      'vote_count': instance.voteCount,
-      'adult': instance.adult,
-      'video': instance.video,
-      'budget': instance.budget,
-      'revenue': instance.revenue,
-      'status': instance.status,
-      'origin_country': instance.originCountry,
-      'production_companies': instance.productionCompanies,
-      'production_countries': instance.productionCountries,
-      'spoken_languages': instance.spokenLanguages,
-      'belongs_to_collection': instance.belongsToCollection,
-      'homepage': instance.homepage,
-      'imdb_id': instance.imdbId,
-      'tagline': instance.tagline,
-      'runtime': instance.runtime,
-      'poster_path': instance.posterPath,
-      'backdrop_path': instance.backdropPath,
-      'release_date': instance.releaseDate,
-    };
+Map<String, dynamic> _$$MovieDetailDtoImplToJson(
+  _$MovieDetailDtoImpl instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'title': instance.title,
+  'original_title': instance.originalTitle,
+  'original_language': instance.originalLanguage,
+  'overview': instance.overview,
+  'genres': instance.genres,
+  'popularity': instance.popularity,
+  'vote_average': instance.voteAverage,
+  'vote_count': instance.voteCount,
+  'adult': instance.adult,
+  'video': instance.video,
+  'budget': instance.budget,
+  'revenue': instance.revenue,
+  'status': instance.status,
+  'origin_country': instance.originCountry,
+  'production_companies': instance.productionCompanies,
+  'production_countries': instance.productionCountries,
+  'spoken_languages': instance.spokenLanguages,
+  'belongs_to_collection': instance.belongsToCollection,
+  'homepage': instance.homepage,
+  'imdb_id': instance.imdbId,
+  'tagline': instance.tagline,
+  'runtime': instance.runtime,
+  'poster_path': instance.posterPath,
+  'backdrop_path': instance.backdropPath,
+  'release_date': instance.releaseDate,
+};

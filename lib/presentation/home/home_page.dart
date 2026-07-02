@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies/presentation/movie/movies_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,7 +10,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(title: const Text('Movies')),
       body: Center(
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute<void>(builder: (_) => const MoviesPage()),
+          ),
           child: const Text('View movies'),
         ),
       ),
