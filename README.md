@@ -2,6 +2,8 @@
 
 App móvil en Flutter que lista películas **populares** y **mejor valoradas** y permite **buscarlas por nombre**. Los datos provienen de la API de [TMDB (The Movie Database)](https://www.themoviedb.org/).
 
+Este proyecto se desarrolló íntegramente con Claude Code, solicitando siempre /plan antes de ejecutar cualquier cambio para validar el enfoque antes de escribir código. El desarrollo siguió la arquitectura por capas de adentro hacia afuera: primero definir bien los objetos de dominio, luego implementar los repositorios en la capa de infraestructura y, por último, presentar los datos en la UI
+
 ## Funcionalidades
 
 - Listado de películas **populares** y **top rated**.
