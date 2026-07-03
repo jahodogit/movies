@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies/domain/movie/models/movie_detail.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class MovieFactsWidget extends StatelessWidget {
   const MovieFactsWidget({super.key, required this.movie});
@@ -9,20 +10,20 @@ class MovieFactsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final entries = <MapEntry<String, String>>[
-      MapEntry('Status', movie.status),
+      MapEntry(Copies.factStatus, movie.status),
       if (movie.releaseDate != null)
-        MapEntry('Release date', _formatDate(movie.releaseDate!)),
-      MapEntry('Original language', movie.originalLanguage.toUpperCase()),
+        MapEntry(Copies.factReleaseDate, _formatDate(movie.releaseDate!)),
+      MapEntry(Copies.factOriginalLanguage, movie.originalLanguage.toUpperCase()),
       if (movie.spokenLanguages.isNotEmpty)
         MapEntry(
-          'Spoken languages',
+          Copies.factSpokenLanguages,
           movie.spokenLanguages.map((language) => language.englishName).join(', '),
         ),
-      if (movie.budget > 0) MapEntry('Budget', _formatMoney(movie.budget)),
-      if (movie.revenue > 0) MapEntry('Revenue', _formatMoney(movie.revenue)),
+      if (movie.budget > 0) MapEntry(Copies.factBudget, _formatMoney(movie.budget)),
+      if (movie.revenue > 0) MapEntry(Copies.factRevenue, _formatMoney(movie.revenue)),
       if (movie.productionCompanies.isNotEmpty)
         MapEntry(
-          'Production',
+          Copies.factProduction,
           movie.productionCompanies.map((company) => company.name).join(', '),
         ),
     ];

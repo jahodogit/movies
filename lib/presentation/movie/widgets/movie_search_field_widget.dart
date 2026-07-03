@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class MovieSearchFieldWidget extends StatelessWidget {
   const MovieSearchFieldWidget({
@@ -21,7 +22,7 @@ class MovieSearchFieldWidget extends StatelessWidget {
             controller: controller,
             textInputAction: TextInputAction.search,
             decoration: InputDecoration(
-              hintText: 'Search movie...',
+              hintText: Copies.searchHint,
               prefixIcon: const Icon(Icons.search),
               suffixIcon: value.text.isEmpty
                   ? null

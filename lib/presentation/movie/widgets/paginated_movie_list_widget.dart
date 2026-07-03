@@ -5,6 +5,7 @@ import 'package:movies/domain/movie/models/movie.dart';
 import 'package:movies/presentation/movie/controllers/movie_list_state.dart';
 import 'package:movies/presentation/shared/widgets/error_view_widget.dart';
 import 'package:movies/presentation/movie/widgets/movie_list_item_widget.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class PaginatedMovieListWidget extends StatelessWidget {
   const PaginatedMovieListWidget({
@@ -62,7 +63,7 @@ class PaginatedMovieListWidget extends StatelessWidget {
       error: (error, _) => ErrorViewWidget(
         message: error is MovieException
             ? error.message
-            : 'Something went wrong.',
+            : Copies.genericError,
         onRetry: onRetry,
       ),
     );

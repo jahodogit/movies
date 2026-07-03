@@ -6,6 +6,7 @@ import 'package:movies/domain/movie/exceptions/non_english_movie_exception.dart'
 import 'package:movies/presentation/movie_detail/controllers/movie_detail_provider.dart';
 import 'package:movies/presentation/shared/widgets/error_view_widget.dart';
 import 'package:movies/presentation/movie_detail/widgets/movie_detail_content_widget.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class MovieDetailPage extends ConsumerWidget {
   const MovieDetailPage({
@@ -31,7 +32,7 @@ class MovieDetailPage extends ConsumerWidget {
           return ErrorViewWidget(
             message: error is MovieException
                 ? error.message
-                : 'Something went wrong.',
+                : Copies.genericError,
             onRetry: canRetry
                 ? () => ref.invalidate(movieDetailProvider(movieId))
                 : null,

@@ -12,6 +12,7 @@ import 'package:movies/presentation/movie/controllers/movie_list_state.dart';
 import 'package:movies/presentation/movie/controllers/movie_search_notifier.dart';
 import 'package:movies/presentation/movie/widgets/movie_search_field_widget.dart';
 import 'package:movies/presentation/movie/widgets/paginated_movie_list_widget.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class MoviesPage extends HookConsumerWidget {
   const MoviesPage({super.key, required this.title, required this.category});
@@ -51,7 +52,7 @@ class MoviesPage extends HookConsumerWidget {
       state = ref.watch(provider);
       onLoadMore = () => ref.read(provider.notifier).loadMore();
       onRetry = () => ref.invalidate(provider);
-      emptyMessage = 'No movies available.';
+      emptyMessage = Copies.noMoviesAvailable;
     }
 
     return Scaffold(

@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:movies/presentation/shared/router/app_routes.dart';
 import 'package:movies/presentation/di/router/router_providers.dart';
 import 'package:movies/presentation/movie/controllers/movie_category.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -10,7 +11,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Movies')),
+      appBar: AppBar(title: const Text(Copies.appTitle)),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -19,20 +20,20 @@ class HomePage extends ConsumerWidget {
               onPressed: () => _open(
                 context,
                 ref,
-                title: 'Popular',
+                title: Copies.homePopular,
                 category: MovieCategory.popular,
               ),
-              child: const Text('Popular'),
+              child: const Text(Copies.homePopular),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: () => _open(
                 context,
                 ref,
-                title: 'Top Rated',
+                title: Copies.homeTopRated,
                 category: MovieCategory.topRated,
               ),
-              child: const Text('Top Rated'),
+              child: const Text(Copies.homeTopRated),
             ),
           ],
         ),

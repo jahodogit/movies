@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movies/domain/movie/models/movie_detail.dart';
 import 'package:movies/presentation/movie_detail/widgets/movie_backdrop_widget.dart';
 import 'package:movies/presentation/movie_detail/widgets/movie_facts_widget.dart';
+import 'package:movies/presentation/shared/utils/copies.dart';
 import 'package:movies/presentation/shared/widgets/poster_widget.dart';
 
 class MovieDetailContentWidget extends StatelessWidget {
@@ -82,7 +83,7 @@ class MovieDetailContentWidget extends StatelessWidget {
               ],
               if (movie.overview.isNotEmpty) ...[
                 const SizedBox(height: 20),
-                Text('Overview', style: theme.textTheme.titleMedium),
+                Text(Copies.detailOverview, style: theme.textTheme.titleMedium),
                 const SizedBox(height: 8),
                 Text(movie.overview),
               ],
