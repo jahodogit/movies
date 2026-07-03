@@ -47,6 +47,3 @@ app.*.map.json
 # Claude Code (kept out of version control)
 .claude/
 CLAUDE.md
-
-# Secrets / environment (TMDB API key)
-config/env.json
