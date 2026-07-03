@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:movies/presentation/movie/movies_page.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:movies/presentation/shared/router/app_routes.dart';
+import 'package:movies/presentation/di/router/router_providers.dart';
 import 'package:movies/presentation/movie/controllers/movie_category.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(title: const Text('Movies')),
       body: Center(
@@ -16,6 +18,7 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => _open(
                 context,
+                ref,
                 title: 'Popular',
                 category: MovieCategory.popular,
               ),
@@ -25,6 +28,7 @@ class HomePage extends StatelessWidget {
             ElevatedButton(
               onPressed: () => _open(
                 context,
+                ref,
                 title: 'Top Rated',
                 category: MovieCategory.topRated,
               ),
@@ -37,15 +41,13 @@ class HomePage extends StatelessWidget {
   }
 
   void _open(
-    BuildContext context, {
+    BuildContext context,
+    WidgetRef ref, {
     required String title,
     required MovieCategory category,
   }) {
-    Navigator.push(
-      context,
-      MaterialPageRoute<void>(
-        builder: (_) => MoviesPage(title: title, category: category),
-      ),
-    );
+    ref
+        .read(appRouterProvider)
+        .navigateTo(context, AppRoutes.moviesPath(title, category));
   }
 }

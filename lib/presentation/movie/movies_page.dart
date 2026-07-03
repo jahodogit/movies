@@ -3,8 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:movies/presentation/shared/router/app_routes.dart';
 import 'package:movies/domain/movie/models/movie.dart';
-import 'package:movies/presentation/movie_detail/movie_detail_page.dart';
+import 'package:movies/presentation/di/router/router_providers.dart';
 import 'package:movies/presentation/movie/controllers/movie_category.dart';
 import 'package:movies/presentation/movie/controllers/movie_list_notifier.dart';
 import 'package:movies/presentation/movie/controllers/movie_list_state.dart';
@@ -68,18 +69,15 @@ class MoviesPage extends HookConsumerWidget {
         state: state,
         onLoadMore: onLoadMore,
         onRetry: onRetry,
-        onMovieTap: (movie) => _openDetail(context, movie),
+        onMovieTap: (movie) => _openDetail(context, ref, movie),
         emptyMessage: emptyMessage,
       ),
     );
   }
 
-  void _openDetail(BuildContext context, Movie movie) {
-    Navigator.push(
-      context,
-      MaterialPageRoute<void>(
-        builder: (_) => MovieDetailPage(movieId: movie.id, title: movie.title),
-      ),
-    );
+  void _openDetail(BuildContext context, WidgetRef ref, Movie movie) {
+    ref
+        .read(appRouterProvider)
+        .navigateTo(context, AppRoutes.movieDetailPath(movie.id, movie.title));
   }
 }
