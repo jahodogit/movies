@@ -1,0 +1,19 @@
+appId: com.example.movies
+---
+- launchApp:
+    clearState: true
+- tapOn: "Popular"
+- tapOn: "Search movie..."
+- inputText: "batman"
+- extendedWaitUntil:
+    visible:
+      text: ".*Batman.*"
+    timeout: 15000
+- tapOn:
+    point: "50%,22%"
+- scrollUntilVisible:
+    element:
+      text: ".*Overview.*"
+    direction: DOWN
+    timeout: 20000
+- assertVisible: ".*Overview.*"

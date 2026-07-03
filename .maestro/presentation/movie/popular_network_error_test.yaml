@@ -1,0 +1,16 @@
+appId: com.example.movies
+---
+- setAirplaneMode: enabled
+- launchApp:
+    clearState: true
+- tapOn: "Popular"
+- extendedWaitUntil:
+    visible: "Retry"
+    timeout: 15000
+- assertVisible: "Retry"
+- setAirplaneMode: disabled
+- tapOn: "Retry"
+- extendedWaitUntil:
+    notVisible: "Retry"
+    timeout: 20000
+- assertNotVisible: "Retry"
