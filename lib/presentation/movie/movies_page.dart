@@ -1,12 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:movies/domain/movie/exceptions/movie_exception.dart';
-import 'package:movies/presentation/movie/notifiers/movie_category.dart';
-import 'package:movies/presentation/movie/notifiers/movie_list_notifier.dart';
-import 'package:movies/presentation/movie/widgets/error_view_widget.dart';
-import 'package:movies/presentation/movie/widgets/movie_list_item_widget.dart';
+import 'dart:async';
 
-class MoviesPage extends ConsumerWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:movies/domain/movie/models/movie.dart';
+import 'package:movies/presentation/movie_detail/movie_detail_page.dart';
+import 'package:movies/presentation/movie/controllers/movie_category.dart';
+import 'package:movies/presentation/movie/controllers/movie_list_notifier.dart';
+import 'package:movies/presentation/movie/controllers/movie_list_state.dart';
+import 'package:movies/presentation/movie/controllers/movie_search_notifier.dart';
+import 'package:movies/presentation/movie/widgets/movie_search_field_widget.dart';
+import 'package:movies/presentation/movie/widgets/paginated_movie_list_widget.dart';
+
+class MoviesPage extends HookConsumerWidget {
   const MoviesPage({super.key, required this.title, required this.category});
 
   final String title;
@@ -14,41 +20,65 @@ class MoviesPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(movieListNotifierProvider(category));
+    final controller = useTextEditingController();
+    final query = useState('');
+    final text = useValueListenable(controller).text;
+
+    useEffect(() {
+      final timer = Timer(
+        const Duration(milliseconds: 350),
+        () => query.value = text.trim(),
+      );
+      return timer.cancel;
+    }, [text]);
+
+    final isSearching = query.value.isNotEmpty;
+
+    final AsyncValue<MovieListState> state;
+    final VoidCallback onLoadMore;
+    final VoidCallback onRetry;
+    final String emptyMessage;
+
+    if (isSearching) {
+      final provider = movieSearchNotifierProvider(query.value);
+      state = ref.watch(provider);
+      onLoadMore = () => ref.read(provider.notifier).loadMore();
+      onRetry = () => ref.invalidate(provider);
+      emptyMessage = 'No results for "${query.value}".';
+    } else {
+      final provider = movieListNotifierProvider(category);
+      state = ref.watch(provider);
+      onLoadMore = () => ref.read(provider.notifier).loadMore();
+      onRetry = () => ref.invalidate(provider);
+      emptyMessage = 'No movies available.';
+    }
+
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: state.when(
-        data: (data) => NotificationListener<ScrollNotification>(
-          onNotification: (notification) {
-            final metrics = notification.metrics;
-            if (metrics.pixels >= metrics.maxScrollExtent - 300) {
-              ref
-                  .read(movieListNotifierProvider(category).notifier)
-                  .loadMore();
-            }
-            return false;
-          },
-          child: ListView.separated(
-            itemCount: data.movies.length + (data.isLoadingMore ? 1 : 0),
-            separatorBuilder: (_, _) => const Divider(height: 1),
-            itemBuilder: (_, index) {
-              if (index >= data.movies.length) {
-                return const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Center(child: CircularProgressIndicator()),
-                );
-              }
-              return MovieListItemWidget(movie: data.movies[index]);
-            },
+      appBar: AppBar(
+        title: Text(title),
+        bottom: PreferredSize(
+          preferredSize: const Size.fromHeight(64),
+          child: MovieSearchFieldWidget(
+            controller: controller,
+            onClear: controller.clear,
           ),
         ),
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (error, _) => ErrorViewWidget(
-          message: error is MovieException
-              ? error.message
-              : 'Something went wrong.',
-          onRetry: () => ref.invalidate(movieListNotifierProvider(category)),
-        ),
+      ),
+      body: PaginatedMovieListWidget(
+        state: state,
+        onLoadMore: onLoadMore,
+        onRetry: onRetry,
+        onMovieTap: (movie) => _openDetail(context, movie),
+        emptyMessage: emptyMessage,
+      ),
+    );
+  }
+
+  void _openDetail(BuildContext context, Movie movie) {
+    Navigator.push(
+      context,
+      MaterialPageRoute<void>(
+        builder: (_) => MovieDetailPage(movieId: movie.id, title: movie.title),
       ),
     );
   }

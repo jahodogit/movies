@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies/presentation/movie/movies_page.dart';
-import 'package:movies/presentation/movie/notifiers/movie_category.dart';
+import 'package:movies/presentation/movie/controllers/movie_category.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

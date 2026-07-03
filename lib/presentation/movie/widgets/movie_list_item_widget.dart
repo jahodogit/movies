@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movies/domain/movie/models/movie.dart';
-import 'package:movies/presentation/movie/widgets/poster_widget.dart';
+import 'package:movies/presentation/shared/widgets/poster_widget.dart';
 
 class MovieListItemWidget extends StatelessWidget {
   const MovieListItemWidget({super.key, required this.movie, this.onTap});

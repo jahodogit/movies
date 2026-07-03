@@ -1,17 +1,22 @@
-import 'package:movies/domain/movie/models/movie.dart';
-import 'package:movies/domain/movie/services/movie_service.dart';
 import 'package:movies/presentation/di/movie/providers.dart';
-import 'package:movies/presentation/movie/notifiers/movie_category.dart';
-import 'package:movies/presentation/movie/notifiers/movie_list_state.dart';
+import 'package:movies/presentation/movie/controllers/movie_list_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'movie_list_notifier.g.dart';
+part 'movie_search_notifier.g.dart';
 
 @riverpod
-class MovieListNotifier extends _$MovieListNotifier {
+class MovieSearchNotifier extends _$MovieSearchNotifier {
   @override
-  Future<MovieListState> build(MovieCategory category) async {
-    final movies = await _fetch(ref.watch(movieServiceProvider), 1);
+  Future<MovieListState> build(String query) async {
+    if (query.trim().isEmpty) {
+      return const MovieListState(
+        movies: [],
+        page: 1,
+        hasMore: false,
+        isLoadingMore: false,
+      );
+    }
+    final movies = await ref.watch(movieServiceProvider).searchMovies(query);
     return MovieListState(
       movies: movies,
       page: 1,
@@ -28,7 +33,9 @@ class MovieListNotifier extends _$MovieListNotifier {
     state = AsyncData(current.copyWith(isLoadingMore: true));
     final nextPage = current.page + 1;
     try {
-      final movies = await _fetch(ref.read(movieServiceProvider), nextPage);
+      final movies = await ref
+          .read(movieServiceProvider)
+          .searchMovies(query, page: nextPage);
       if (movies.isEmpty) {
         state = AsyncData(current.copyWith(hasMore: false, isLoadingMore: false));
         return;
@@ -43,12 +50,5 @@ class MovieListNotifier extends _$MovieListNotifier {
     } catch (_) {
       state = AsyncData(current.copyWith(isLoadingMore: false));
     }
-  }
-
-  Future<List<Movie>> _fetch(MovieService service, int page) {
-    return switch (category) {
-      MovieCategory.popular => service.getPopularMovies(page: page),
-      MovieCategory.topRated => service.getTopRatedMovies(page: page),
-    };
   }
 }

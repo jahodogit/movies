@@ -3,4 +3,7 @@ abstract final class TmdbImage {
 
   static String poster(String path, {String size = 'w185'}) =>
       '$_baseUrl/$size$path';
+
+  static String backdrop(String path, {String size = 'w780'}) =>
+      '$_baseUrl/$size$path';
 }
